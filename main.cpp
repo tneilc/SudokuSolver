@@ -37,7 +37,7 @@ void print(){
     }
 }
 
-int empty(int& row, int&col){ // make a reference to row and col variable
+int empty(int &row, int &col){ // make a reference to row and col variable
     for (row = 0; row < number; row++) // set them to zero then increase them
         for (col = 0; col < number; col++)
             if (board[row][col] == 0) // if that place is equal to 0 then return true and row and col variables are now equal to that empty place
