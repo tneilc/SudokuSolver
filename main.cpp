@@ -1,6 +1,6 @@
 #include <iostream>
-#include <Windows.h>
-#include <math.h>
+#include <chrono>
+#include <ctime>  
 
 #define log(thing) (std::cout<<thing<<std::endl)
 #define number 9
@@ -80,8 +80,30 @@ bool isFinished(){
 
 
 int main(){
+    auto start = std::chrono::system_clock::now();
     isFinished();
+    auto end = std::chrono::system_clock::now();
+    std::chrono::duration<double> duration = end-start;
     print();
+    log("");
+    std::cout<<"Finished in  "<<duration.count()<<"  seconds";
     
 
 }
+
+
+// Here is the brute force protected sudoku try it!
+
+
+/*
+int board[9][9] = {
+{0, 0, 0, 0, 0, 0, 0, 0, 0},
+{0, 0, 0, 0, 0, 3, 0, 8, 5},
+{0, 0, 1, 0, 2, 0, 0, 0, 0},
+{0, 0, 0, 5, 0, 7, 0, 0, 0},
+{0, 0, 4, 0, 0, 0, 1, 0, 0},
+{0, 9, 0, 0, 0, 0, 0, 0, 0},
+{5, 0, 0, 0, 0, 0, 0, 7, 3},
+{0, 0, 2, 0, 1, 0, 0, 0, 0},
+{0, 0, 0, 0, 4, 0, 0, 0, 9}};
+*/
